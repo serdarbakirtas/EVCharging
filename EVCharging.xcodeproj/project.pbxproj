@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		30D9BC222BAAF105003CEA44 /* EVChargingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC212BAAF105003CEA44 /* EVChargingApp.swift */; };
-		30D9BC242BAAF105003CEA44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC232BAAF105003CEA44 /* ContentView.swift */; };
 		30D9BC262BAAF107003CEA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D9BC252BAAF107003CEA44 /* Assets.xcassets */; };
 		30D9BC292BAAF107003CEA44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D9BC282BAAF107003CEA44 /* Preview Assets.xcassets */; };
 		30D9BC332BAAF107003CEA44 /* EVChargingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC322BAAF107003CEA44 /* EVChargingTests.swift */; };
 		30D9BC3D2BAAF107003CEA44 /* EVChargingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC3C2BAAF107003CEA44 /* EVChargingUITests.swift */; };
 		30D9BC3F2BAAF107003CEA44 /* EVChargingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC3E2BAAF107003CEA44 /* EVChargingUITestsLaunchTests.swift */; };
+		30D9BC512BAAF360003CEA44 /* ChargingLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC4E2BAAF360003CEA44 /* ChargingLocationView.swift */; };
+		30D9BC522BAAF360003CEA44 /* ChargingLocationViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC4F2BAAF360003CEA44 /* ChargingLocationViewState.swift */; };
+		30D9BC532BAAF360003CEA44 /* ChargingLocationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC502BAAF360003CEA44 /* ChargingLocationFeature.swift */; };
+		30D9BC552BAAF39F003CEA44 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC542BAAF39F003CEA44 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		30D9BC1E2BAAF105003CEA44 /* EVCharging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVCharging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D9BC212BAAF105003CEA44 /* EVChargingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVChargingApp.swift; sourceTree = "<group>"; };
-		30D9BC232BAAF105003CEA44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		30D9BC252BAAF107003CEA44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30D9BC282BAAF107003CEA44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		30D9BC2E2BAAF107003CEA44 /* EVChargingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVChargingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,10 @@
 		30D9BC382BAAF107003CEA44 /* EVChargingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVChargingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D9BC3C2BAAF107003CEA44 /* EVChargingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVChargingUITests.swift; sourceTree = "<group>"; };
 		30D9BC3E2BAAF107003CEA44 /* EVChargingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVChargingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		30D9BC4E2BAAF360003CEA44 /* ChargingLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingLocationView.swift; sourceTree = SOURCE_ROOT; };
+		30D9BC4F2BAAF360003CEA44 /* ChargingLocationViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingLocationViewState.swift; sourceTree = SOURCE_ROOT; };
+		30D9BC502BAAF360003CEA44 /* ChargingLocationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingLocationFeature.swift; sourceTree = SOURCE_ROOT; };
+		30D9BC542BAAF39F003CEA44 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,9 @@
 		30D9BC202BAAF105003CEA44 /* EVCharging */ = {
 			isa = PBXGroup;
 			children = (
+				30D9BC4B2BAAF204003CEA44 /* Extensions */,
+				30D9BC4C2BAAF208003CEA44 /* Screens */,
 				30D9BC212BAAF105003CEA44 /* EVChargingApp.swift */,
-				30D9BC232BAAF105003CEA44 /* ContentView.swift */,
 				30D9BC252BAAF107003CEA44 /* Assets.xcassets */,
 				30D9BC272BAAF107003CEA44 /* Preview Content */,
 			);
@@ -125,6 +132,32 @@
 				30D9BC3E2BAAF107003CEA44 /* EVChargingUITestsLaunchTests.swift */,
 			);
 			path = EVChargingUITests;
+			sourceTree = "<group>";
+		};
+		30D9BC4B2BAAF204003CEA44 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30D9BC542BAAF39F003CEA44 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		30D9BC4C2BAAF208003CEA44 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				30D9BC4D2BAAF25D003CEA44 /* ChargingLocation */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		30D9BC4D2BAAF25D003CEA44 /* ChargingLocation */ = {
+			isa = PBXGroup;
+			children = (
+				30D9BC4E2BAAF360003CEA44 /* ChargingLocationView.swift */,
+				30D9BC4F2BAAF360003CEA44 /* ChargingLocationViewState.swift */,
+				30D9BC502BAAF360003CEA44 /* ChargingLocationFeature.swift */,
+			);
+			path = ChargingLocation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30D9BC242BAAF105003CEA44 /* ContentView.swift in Sources */,
+				30D9BC512BAAF360003CEA44 /* ChargingLocationView.swift in Sources */,
+				30D9BC522BAAF360003CEA44 /* ChargingLocationViewState.swift in Sources */,
+				30D9BC532BAAF360003CEA44 /* ChargingLocationFeature.swift in Sources */,
+				30D9BC552BAAF39F003CEA44 /* Color.swift in Sources */,
 				30D9BC222BAAF105003CEA44 /* EVChargingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
