@@ -43,6 +43,8 @@
 		30D9BC8D2BAB684E003CEA44 /* ParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC8C2BAB684E003CEA44 /* ParallaxView.swift */; };
 		30D9BC8F2BAB925C003CEA44 /* ChargingSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC8E2BAB925C003CEA44 /* ChargingSpinner.swift */; };
 		30D9BC912BAB9D88003CEA44 /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC902BAB9D88003CEA44 /* ImageAsset.swift */; };
+		30D9BC932BAC2C2E003CEA44 /* StatisticsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC922BAC2C2E003CEA44 /* StatisticsItem.swift */; };
+		30D9BC952BAC2C55003CEA44 /* SuperchargesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC942BAC2C55003CEA44 /* SuperchargesItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		30D9BC8C2BAB684E003CEA44 /* ParallaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxView.swift; sourceTree = "<group>"; };
 		30D9BC8E2BAB925C003CEA44 /* ChargingSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingSpinner.swift; sourceTree = "<group>"; };
 		30D9BC902BAB9D88003CEA44 /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
+		30D9BC922BAC2C2E003CEA44 /* StatisticsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsItem.swift; sourceTree = "<group>"; };
+		30D9BC942BAC2C55003CEA44 /* SuperchargesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperchargesItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,8 @@
 			children = (
 				30D9BC572BAB07FB003CEA44 /* ParallaxHeader.swift */,
 				30D9BC852BAB32CB003CEA44 /* ParallaxContentView.swift */,
+				30D9BC922BAC2C2E003CEA44 /* StatisticsItem.swift */,
+				30D9BC942BAC2C55003CEA44 /* SuperchargesItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -445,9 +451,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				30D9BC8B2BAB3651003CEA44 /* CustomShape.swift in Sources */,
+				30D9BC932BAC2C2E003CEA44 /* StatisticsItem.swift in Sources */,
 				30D9BC8D2BAB684E003CEA44 /* ParallaxView.swift in Sources */,
 				30D9BC8F2BAB925C003CEA44 /* ChargingSpinner.swift in Sources */,
 				30D9BC842BAB163B003CEA44 /* ScrollDetector.swift in Sources */,
+				30D9BC952BAC2C55003CEA44 /* SuperchargesItem.swift in Sources */,
 				30D9BC912BAB9D88003CEA44 /* ImageAsset.swift in Sources */,
 				30D9BC512BAAF360003CEA44 /* ChargingLocationView.swift in Sources */,
 				30D9BC522BAAF360003CEA44 /* ChargingLocationViewState.swift in Sources */,

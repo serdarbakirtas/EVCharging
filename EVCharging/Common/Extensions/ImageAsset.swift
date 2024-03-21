@@ -1,11 +1,3 @@
-#if os(macOS)
-    import AppKit
-#elseif os(iOS)
-    import UIKit
-#elseif os(tvOS) || os(watchOS)
-    import UIKit
-#endif
-
 import SwiftUI
 
 // MARK: - Asset Catalogs
@@ -13,6 +5,10 @@ import SwiftUI
 enum Asset {
     enum Icons {
         static let energy = ImageAsset(name: "Icons/bolt-solid")
+        static let battery = ImageAsset(name: "Icons/battery-three-quarters-solid")
+        static let carBattery = ImageAsset(name: "Icons/car-battery-solid")
+        static let station = ImageAsset(name: "Icons/charging-station-solid")
+        static let location = ImageAsset(name: "Icons/location-dot-solid")
     }
 }
 
@@ -21,22 +17,11 @@ enum Asset {
 struct ImageAsset {
     fileprivate(set) var name: String
 
-    #if os(macOS)
-        typealias Image = NSImage
-    #elseif os(iOS) || os(tvOS) || os(watchOS)
-        typealias Image = UIImage
-    #endif
+    typealias Image = UIImage
 
     var image: Image {
         let bundle = BundleToken.bundle
-        #if os(iOS) || os(tvOS)
-            let image = Image(named: name, in: bundle, compatibleWith: nil)
-        #elseif os(macOS)
-            let name = NSImage.Name(name)
-            let image = (bundle == .main) ? NSImage(named: name) : bundle.image(forResource: name)
-        #elseif os(watchOS)
-            let image = Image(named: name)
-        #endif
+        let image = Image(named: name, in: bundle, compatibleWith: nil)
         guard let result = image else {
             fatalError("Unable to load image asset named \(name).")
         }
