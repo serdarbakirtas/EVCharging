@@ -12,8 +12,29 @@ struct ParallaxHeader<Content>: View where Content: View {
     private let velocityMultiplier: CGFloat = 45
     private let animationResponse: Double = 0.55
     private let animationDampingFraction: CGFloat = 0.65
-    private var minimumShapeOffset: CGFloat = 20.0
 
+    private var headerHeight: CGFloat {
+        (size.height * 0.35) + safeArea.top
+    }
+
+    private var minimumHeaderHeight: CGFloat {
+        65 + safeArea.top
+    }
+
+    private var progress: CGFloat {
+        max(min(-offsetY / (headerHeight - minimumHeaderHeight), 1), 0) // it counts 0...1
+    }
+
+    private var calculatedHeaderHeight: CGFloat {
+        let totalOffset = headerHeight + offsetY
+        return totalOffset < minimumHeaderHeight ? minimumHeaderHeight : totalOffset
+    }
+
+    // MARK: - Initializers
+    /// - Parameters
+    ///   - size: Size of geometry
+    ///   - safeArea: Safe area of geometry
+    ///   - ViewBuilder: It return view to impelement it under the header view
     init(size: CGSize, safeArea: EdgeInsets, @ViewBuilder content: @escaping () -> Content) {
         self.size = size
         self.safeArea = safeArea
@@ -40,47 +61,37 @@ struct ParallaxHeader<Content>: View where Content: View {
             }
         }
     }
+}
 
-    // MARK: - Child views
+// MARK: - Child views
 
+extension ParallaxHeader {
     private var header: some View {
-        let headerHeight = (size.height * 0.35) + safeArea.top
-        let minimumHeaderHeight = 65 + safeArea.top
-        let progress = max(min(-offsetY / (headerHeight - minimumHeaderHeight), 1), 0)
-
-        return GeometryReader { geometry in
+        GeometryReader { geometry in
             ZStack {
-                headerBackground(geometry, headerHeight, minimumHeaderHeight)
+                // Background with shape
+                Color.jucrPrimary.clipShape(CustomShape(xAxis: geometry.size.width / 2)
+                    .offset(y: calculatedHeaderHeight)
+                )
+
+                // Spinner
+                ChargingSpinner()
+                    .frame(height: calculatedHeaderHeight, alignment: .top)
+                    .offset(y: calculatedHeaderHeight - 20)
+
+                // Display images and texts
                 ParallaxContentView(progress: progress, minimumHeaderHeight: minimumHeaderHeight)
             }
-            .frame(height: calculateHeaderViewHeight(headerHeight, minimumHeaderHeight), alignment: .bottom)
+            .frame(height: calculatedHeaderHeight, alignment: .bottom)
             .offset(y: -offsetY)
         }
         .frame(height: headerHeight)
     }
+}
 
-    // MARK: - Private Functions
+// MARK: - Private Functions
 
-    @ViewBuilder
-    private func headerBackground(_ geometry: GeometryProxy, _ headerHeight: CGFloat, _ minimumHeaderHeight: CGFloat) -> some View {
-        Color.jucrPrimary.clipShape(
-            CustomShape(xAxis: geometry.size.width / 2)
-                .offset(y: calculateBackgroundOffsetY(headerHeight, minimumHeaderHeight))
-        )
-
-        let totalOffset = headerHeight + offsetY
-        let targetOffset = max(minimumHeaderHeight, minimumHeaderHeight)
-        ChargingSpinner()
-            .frame(height: totalOffset < targetOffset ? minimumHeaderHeight : headerHeight + offsetY, alignment: .top)
-            .offset(y: (calculateBackgroundOffsetY(headerHeight, minimumHeaderHeight) - 20))
-    }
-
-    private func calculateBackgroundOffsetY(_ headerHeight: CGFloat, _ minimumHeaderHeight: CGFloat) -> CGFloat {
-        let totalOffset = headerHeight + offsetY
-        let targetOffset = max(minimumHeaderHeight, minimumHeaderHeight)
-        return totalOffset < targetOffset ? targetOffset : totalOffset
-    }
-
+extension ParallaxHeader {
     private func handleScrollEnd(_ offset: CGFloat, _ velocity: CGFloat, _ scrollProxy: ScrollViewProxy) {
         let headerHeight = (size.height * 0.35) + safeArea.top
         let minimumHeaderHeight = 65 + safeArea.top
@@ -97,10 +108,6 @@ struct ParallaxHeader<Content>: View where Content: View {
                 scrollProxy.scrollTo("SCROLLVIEW", anchor: .top)
             }
         }
-    }
-
-    private func calculateHeaderViewHeight(_ headerHeight: CGFloat, _ minimumHeaderHeight: CGFloat) -> CGFloat {
-        (headerHeight + offsetY) < minimumHeaderHeight ? minimumHeaderHeight : (headerHeight + offsetY)
     }
 }
 

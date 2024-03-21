@@ -5,11 +5,7 @@ struct ChargingLocationView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            let size = geometry.size
-            let safeArea = geometry.safeAreaInsets
-
-            // Create ParallaxHeader with the provided size and safe area
-            ParallaxHeader(size: size, safeArea: safeArea) {
+            ParallaxHeader(size: geometry.size, safeArea: geometry.safeAreaInsets) {
                 VStack(spacing: 0) {
                     statistics
                     sampleStations
