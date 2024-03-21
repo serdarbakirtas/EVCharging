@@ -7,30 +7,8 @@ struct SuperchargesItem: View {
             .frame(height: 75)
             .overlay(
                 HStack(spacing: 8) {
-                    VStack(spacing: 8) {
-                        Text("Ranchview Dr. Richardson")
-                            .font(.montserratSemiBold(size: 14))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundColor(.jucrSecondary)
-
-                        Text("4/10 available")
-                            .font(.montserratLight(size: 12))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundColor(.jucrSecondary)
-                    }
-
-                    VStack(spacing: 8) {
-                        Asset.Icons.location.imageView
-                            .resizable()
-                            .frame(width: 20, height: 25)
-                            .foregroundColor(.jucrSecondary)
-                        
-                        Text("1.2 km")
-                            .font(.montserratLight(size: 12))
-                            .frame(alignment: .center)
-                            .foregroundColor(.jucrSecondary)
-                    }
-                    
+                    locationDetail
+                    location
                 }
                 .padding()
             )
@@ -38,6 +16,38 @@ struct SuperchargesItem: View {
     }
 }
 
+// MARK: - Child views
+
+extension SuperchargesItem {
+    private var locationDetail: some View {
+        VStack(spacing: 8) {
+            Text("Ranchview Dr. Richardson")
+                .font(.montserratSemiBold(size: 14))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundColor(.jucrSecondary)
+
+            Text("4/10 available")
+                .font(.montserratLight(size: 12))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundColor(.jucrSecondary)
+        }
+    }
+
+    private var location: some View {
+        VStack(spacing: 8) {
+            Asset.Icons.location.imageView
+                .resizable()
+                .frame(width: 20, height: 25)
+                .foregroundColor(.jucrSecondary)
+
+            Text("1.2 km")
+                .font(.montserratLight(size: 12))
+                .frame(alignment: .center)
+                .foregroundColor(.jucrSecondary)
+        }
+    }
+}
+
 #Preview {
-    ChargingLocationView()
+    SuperchargesItem()
 }
