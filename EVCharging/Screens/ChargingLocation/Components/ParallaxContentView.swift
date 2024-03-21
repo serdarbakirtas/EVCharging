@@ -31,7 +31,7 @@ extension ParallaxContentView {
                 .parallaxScaleEffect(progress)
 
             if isTeslaModelXDisplayed {
-                VStack(spacing: 8) {
+                VStack(spacing: 4) {
                     teslaModelText
                     chargingText
                 }
@@ -39,7 +39,7 @@ extension ParallaxContentView {
                 .padding(EdgeInsets(top: 56, leading: 16, bottom: 0, trailing: 16))
 
             } else {
-                VStack(spacing: 8) {
+                VStack(spacing: 4) {
                     helloText
                     chargingSituationText
                 }
@@ -90,7 +90,7 @@ extension ParallaxContentView {
 
     private var chargingSituationText: some View {
         Text("Charging your car...")
-            .font(.montserratBold(size: 22))
+            .font(.montserratBold(size: 18))
             .foregroundColor(.jucrSolidGray)
             .matchedGeometryEffect(id: "subtitleText", in: animation)
             .frame(maxWidth: /*@START_MENU_TOKEN@*/ .infinity/*@END_MENU_TOKEN@*/)
