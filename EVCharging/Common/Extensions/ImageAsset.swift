@@ -9,6 +9,7 @@ enum Asset {
         static let carBattery = ImageAsset(name: "Icons/car-battery-solid")
         static let station = ImageAsset(name: "Icons/charging-station-solid")
         static let location = ImageAsset(name: "Icons/location-dot-solid")
+        static let chevron = ImageAsset(name: "Icons/chevron-down-solid")
     }
     
     enum Images {

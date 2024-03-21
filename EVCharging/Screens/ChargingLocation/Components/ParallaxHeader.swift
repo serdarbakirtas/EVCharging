@@ -78,6 +78,9 @@ extension ParallaxHeader {
                 ChargingSpinner()
                     .frame(height: calculatedHeaderHeight, alignment: .top)
                     .offset(y: calculatedHeaderHeight - 20)
+                    .parallaxOpacityEffect(progress)
+                
+                buttonChevron
 
                 // Display images and texts
                 ParallaxContentView(progress: progress, minimumHeaderHeight: minimumHeaderHeight)
@@ -86,6 +89,20 @@ extension ParallaxHeader {
             .offset(y: -offsetY)
         }
         .frame(height: headerHeight)
+    }
+    
+    private var buttonChevron: some View {
+        Button {
+            print("Button was tapped")
+        } label: {
+            Asset.Icons.chevron.imageView
+                .resizable()
+                .frame(width: 16, height: 16)
+                .foregroundColor(.jucrSolidGray)
+        }
+        .frame(height: calculatedHeaderHeight, alignment: .top)
+        .offset(y: calculatedHeaderHeight)
+        .parallaxReverseOpacityEffect(progress)
     }
 }
 

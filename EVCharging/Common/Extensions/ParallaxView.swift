@@ -5,6 +5,10 @@ extension View {
         opacity(1 - (progress))
     }
     
+    func parallaxReverseOpacityEffect(_ progress: CGFloat) -> some View {
+        opacity(0 + (progress))
+    }
+    
     func parallaxScaleEffect(_ progress: CGFloat) -> some View {
         scaleEffect(1 - (progress * 0.5), anchor: .trailing)
     }
