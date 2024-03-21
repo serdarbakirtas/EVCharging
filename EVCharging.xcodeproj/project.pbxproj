@@ -39,6 +39,10 @@
 		30D9BC812BAB1232003CEA44 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC802BAB1232003CEA44 /* Font.swift */; };
 		30D9BC842BAB163B003CEA44 /* ScrollDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC832BAB163B003CEA44 /* ScrollDetector.swift */; };
 		30D9BC862BAB32CB003CEA44 /* ParallaxContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC852BAB32CB003CEA44 /* ParallaxContentView.swift */; };
+		30D9BC8B2BAB3651003CEA44 /* CustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC8A2BAB3651003CEA44 /* CustomShape.swift */; };
+		30D9BC8D2BAB684E003CEA44 /* ParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC8C2BAB684E003CEA44 /* ParallaxView.swift */; };
+		30D9BC8F2BAB925C003CEA44 /* ChargingSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC8E2BAB925C003CEA44 /* ChargingSpinner.swift */; };
+		30D9BC912BAB9D88003CEA44 /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC902BAB9D88003CEA44 /* ImageAsset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +99,10 @@
 		30D9BC802BAB1232003CEA44 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		30D9BC832BAB163B003CEA44 /* ScrollDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDetector.swift; sourceTree = "<group>"; };
 		30D9BC852BAB32CB003CEA44 /* ParallaxContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxContentView.swift; sourceTree = "<group>"; };
+		30D9BC8A2BAB3651003CEA44 /* CustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShape.swift; sourceTree = "<group>"; };
+		30D9BC8C2BAB684E003CEA44 /* ParallaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxView.swift; sourceTree = "<group>"; };
+		30D9BC8E2BAB925C003CEA44 /* ChargingSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingSpinner.swift; sourceTree = "<group>"; };
+		30D9BC902BAB9D88003CEA44 /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +155,7 @@
 			children = (
 				30D9BC252BAAF107003CEA44 /* Assets.xcassets */,
 				30D9BC7F2BAB1149003CEA44 /* Info.plist */,
-				30D9BC4B2BAAF204003CEA44 /* Extensions */,
+				30D9BC872BAB3629003CEA44 /* Common */,
 				30D9BC822BAB15BA003CEA44 /* Helpers */,
 				30D9BC592BAB10C2003CEA44 /* Resources */,
 				30D9BC4C2BAAF208003CEA44 /* Screens */,
@@ -187,6 +195,8 @@
 			children = (
 				30D9BC542BAAF39F003CEA44 /* Color.swift */,
 				30D9BC802BAB1232003CEA44 /* Font.swift */,
+				30D9BC8C2BAB684E003CEA44 /* ParallaxView.swift */,
+				30D9BC902BAB9D88003CEA44 /* ImageAsset.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -258,6 +268,32 @@
 				30D9BC832BAB163B003CEA44 /* ScrollDetector.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		30D9BC872BAB3629003CEA44 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				30D9BC882BAB3634003CEA44 /* Components */,
+				30D9BC4B2BAAF204003CEA44 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		30D9BC882BAB3634003CEA44 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				30D9BC892BAB3647003CEA44 /* UI */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		30D9BC892BAB3647003CEA44 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				30D9BC8A2BAB3651003CEA44 /* CustomShape.swift */,
+				30D9BC8E2BAB925C003CEA44 /* ChargingSpinner.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,7 +444,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D9BC8B2BAB3651003CEA44 /* CustomShape.swift in Sources */,
+				30D9BC8D2BAB684E003CEA44 /* ParallaxView.swift in Sources */,
+				30D9BC8F2BAB925C003CEA44 /* ChargingSpinner.swift in Sources */,
 				30D9BC842BAB163B003CEA44 /* ScrollDetector.swift in Sources */,
+				30D9BC912BAB9D88003CEA44 /* ImageAsset.swift in Sources */,
 				30D9BC512BAAF360003CEA44 /* ChargingLocationView.swift in Sources */,
 				30D9BC522BAAF360003CEA44 /* ChargingLocationViewState.swift in Sources */,
 				30D9BC812BAB1232003CEA44 /* Font.swift in Sources */,

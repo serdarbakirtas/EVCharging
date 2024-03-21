@@ -1,11 +1,18 @@
 import SwiftUI
 
 struct ParallaxHeader<Content>: View where Content: View {
+    // Properties
     private let content: () -> Content
     private let size: CGSize
     private let safeArea: EdgeInsets
 
     @State private var offsetY: CGFloat = 0
+
+    // Constants
+    private let velocityMultiplier: CGFloat = 45
+    private let animationResponse: Double = 0.55
+    private let animationDampingFraction: CGFloat = 0.65
+    private var minimumShapeOffset: CGFloat = 20.0
 
     init(size: CGSize, safeArea: EdgeInsets, @ViewBuilder content: @escaping () -> Content) {
         self.size = size
@@ -17,7 +24,7 @@ struct ParallaxHeader<Content>: View where Content: View {
         ScrollViewReader { scrollProxy in
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
-                    headerView
+                    header
                         .zIndex(1000)
 
                     content()
@@ -33,45 +40,60 @@ struct ParallaxHeader<Content>: View where Content: View {
             }
         }
     }
-}
 
-// MARK: - Child views
+    // MARK: - Child views
 
-extension ParallaxHeader {
-    private var headerView: some View {
-        let headerHeight = (size.height * 0.4) + safeArea.top
+    private var header: some View {
+        let headerHeight = (size.height * 0.35) + safeArea.top
         let minimumHeaderHeight = 65 + safeArea.top
         let progress = max(min(-offsetY / (headerHeight - minimumHeaderHeight), 1), 0)
 
-        return GeometryReader { _ in
+        return GeometryReader { geometry in
             ZStack {
-                Rectangle()
-                    .fill(Color.jucrPrimary)
-
-                VStack(spacing: 8) {
-                    ParallaxContentView(progress: progress, minimumHeaderHeight: minimumHeaderHeight)
-                        .frame(width: headerHeight, height: headerHeight * 0.4, alignment: .leading)
-                }
-                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                headerBackground(geometry, headerHeight, minimumHeaderHeight)
+                ParallaxContentView(progress: progress, minimumHeaderHeight: minimumHeaderHeight)
             }
-            .frame(height: calculateHeaderViewHeight(headerHeight, minimumHeaderHeight),
-                   alignment: .bottom)
+            .frame(height: calculateHeaderViewHeight(headerHeight, minimumHeaderHeight), alignment: .bottom)
             .offset(y: -offsetY)
         }
         .frame(height: headerHeight)
     }
-}
 
-// MARK: - Private Functions
+    // MARK: - Private Functions
 
-extension ParallaxHeader {
+    @ViewBuilder
+    private func headerBackground(_ geometry: GeometryProxy, _ headerHeight: CGFloat, _ minimumHeaderHeight: CGFloat) -> some View {
+        Color.jucrPrimary.clipShape(
+            CustomShape(xAxis: geometry.size.width / 2)
+                .offset(y: calculateBackgroundOffsetY(headerHeight, minimumHeaderHeight))
+        )
+
+        let totalOffset = headerHeight + offsetY
+        let targetOffset = max(minimumHeaderHeight, minimumHeaderHeight)
+        ChargingSpinner()
+            .frame(height: totalOffset < targetOffset ? minimumHeaderHeight : headerHeight + offsetY, alignment: .top)
+            .offset(y: (calculateBackgroundOffsetY(headerHeight, minimumHeaderHeight) - 20))
+    }
+
+    private func calculateBackgroundOffsetY(_ headerHeight: CGFloat, _ minimumHeaderHeight: CGFloat) -> CGFloat {
+        let totalOffset = headerHeight + offsetY
+        let targetOffset = max(minimumHeaderHeight, minimumHeaderHeight)
+        return totalOffset < targetOffset ? targetOffset : totalOffset
+    }
+
     private func handleScrollEnd(_ offset: CGFloat, _ velocity: CGFloat, _ scrollProxy: ScrollViewProxy) {
-        let headerHeight = (size.height * 0.4) + safeArea.top
+        let headerHeight = (size.height * 0.35) + safeArea.top
         let minimumHeaderHeight = 65 + safeArea.top
-        let targetEnd = offset + (velocity * 45)
+        let targetEnd = offset + (velocity * velocityMultiplier)
 
         if targetEnd < (headerHeight - minimumHeaderHeight), targetEnd > 0 {
-            withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.65, blendDuration: 0.65)) {
+            withAnimation(
+                .interactiveSpring(
+                    response: animationResponse,
+                    dampingFraction: animationDampingFraction,
+                    blendDuration: animationDampingFraction
+                )
+            ) {
                 scrollProxy.scrollTo("SCROLLVIEW", anchor: .top)
             }
         }

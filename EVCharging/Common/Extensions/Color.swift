@@ -10,4 +10,8 @@ extension Color {
     static let jucrSolidGray = ColorPallet.solidGray
     static let jucrSolidBlue = ColorPallet.solidBlue
     static let jucrSolidYellow = ColorPallet.solidYellow
+    static let jucrGradientPurple = ColorPallet.firstGradientPurple
+    static let jucrGradientBlue = ColorPallet.firstGradientBlue
+    static let jucrGradientOrange = ColorPallet.secondGradientOrange
+    static let jucrGradientYellow = ColorPallet.secondGradientYellow
 }

@@ -27,11 +27,6 @@ enum FontFamily {
         static let light = FontMeta(name: "Montserrat-Light", family: "jucr Head", path: "Montserrat-Light.ttf")
         static let all: [FontMeta] = [regular, bold, semiBold, light]
     }
-
-    static let allCustomFonts: [FontMeta] = [Montserrat.all].flatMap { $0 }
-    static func registerAllCustomFonts() {
-        allCustomFonts.forEach { $0.register() }
-    }
 }
 
 struct FontMeta {
@@ -42,34 +37,4 @@ struct FontMeta {
     func font(size: CGFloat) -> Font {
         .custom(name, size: size)
     }
-
-    func font(size: CGFloat) -> UIFont {
-        guard let font = UIFont(font: self, size: size) else {
-            assertionFailure("Unable to initialize font '\(name)' (\(family))")
-            return .systemFont(ofSize: size)
-        }
-        return font
-    }
-
-    func register() {
-        guard let url else { return }
-        CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
-    }
-
-    fileprivate var url: URL? {
-        BundleToken.bundle.url(forResource: path, withExtension: nil)
-    }
-}
-
-private extension UIFont {
-    convenience init?(font: FontMeta, size: CGFloat) {
-        if !UIFont.fontNames(forFamilyName: font.family).contains(font.name) {
-            font.register()
-        }
-        self.init(name: font.name, size: size)
-    }
-}
-
-private final class BundleToken {
-    static let bundle: Bundle = .init(for: BundleToken.self)
 }

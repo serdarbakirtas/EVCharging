@@ -10,7 +10,7 @@ struct ChargingLocationView: View {
 
             // Create ParallaxHeader with the provided size and safe area
             ParallaxHeader(size: size, safeArea: safeArea) {
-                sampleStations // Provide the content for the ParallaxHeader
+                sampleStations
             }
             .ignoresSafeArea(.all, edges: .top)
         }
