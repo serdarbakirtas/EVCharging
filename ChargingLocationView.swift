@@ -21,15 +21,15 @@ struct ChargingLocationView: View {
 
 extension ChargingLocationView {
     private var sampleStations: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 0) {
             VStack(spacing: 8) {
                 Text("Statistic")
                     .font(.montserratBold(size: 20))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(.primary)
                     .padding(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
-                
-                ScrollView(.horizontal) {
+
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
                         StatisticsItem(
                             imageView: Asset.Icons.carBattery.imageView,
@@ -47,10 +47,16 @@ extension ChargingLocationView {
                 }
             }
 
-            ForEach(1 ... 25, id: \.self) { _ in
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .fill(Color.black.opacity(0.2))
-                    .frame(height: 75)
+            VStack(spacing: 8) {
+                Text("Nearby Supercharges")
+                    .font(.montserratBold(size: 20))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundColor(.primary)
+                    .padding()
+
+                ForEach(1 ... 10, id: \.self) { _ in
+                    SuperchargesItem()
+                }
             }
         }
     }
