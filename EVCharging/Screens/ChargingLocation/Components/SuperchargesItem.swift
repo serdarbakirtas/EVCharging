@@ -37,7 +37,8 @@ extension SuperchargesItem {
         VStack(spacing: 8) {
             Asset.Icons.location.imageView
                 .resizable()
-                .frame(width: 20, height: 25)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 29, height: 29)
                 .foregroundColor(.jucrSecondary)
 
             Text("1.2 km")

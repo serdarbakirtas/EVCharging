@@ -43,11 +43,11 @@ extension StatisticsItem {
         HStack(spacing: 0) {
             Circle()
                 .fill(color.opacity(0.2))
-                .frame(width: 50, height: 50) // Circle background size
+                .frame(width: 50, height: 50)
                 .overlay(
                     imageView
                         .resizable()
-                        .frame(width: 24, height: 24) // Icon size
+                        .frame(width: 29, height: 29)
                         .foregroundColor(color)
                 )
             Spacer()

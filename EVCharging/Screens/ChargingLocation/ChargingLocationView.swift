@@ -32,7 +32,8 @@ extension ChargingLocationView {
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Asset.Icons.ellipsis.imageView
                         .resizable()
-                        .frame(width: 20, height: 20)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 29, height: 29)
                         .foregroundColor(.jucrSecondary)
                 })
             }
@@ -71,7 +72,7 @@ extension ChargingLocationView {
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Text("View All")
                         .font(.montserratLight(size: 12))
-                        .frame(alignment: .leading)
+                        .frame(alignment: .trailing)
                         .foregroundColor(.jucrSecondary)
                         .padding()
                 })

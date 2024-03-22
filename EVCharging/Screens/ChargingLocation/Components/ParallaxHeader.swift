@@ -14,7 +14,7 @@ struct ParallaxHeader<Content>: View where Content: View {
     private let animationDampingFraction: CGFloat = 0.65
 
     private var headerHeight: CGFloat {
-        (size.height * 0.35) + safeArea.top
+        (size.height * 0.37) + safeArea.top
     }
 
     private var minimumHeaderHeight: CGFloat {
@@ -73,6 +73,7 @@ extension ParallaxHeader {
                 Color.jucrPrimary.clipShape(CustomShape(xAxis: geometry.size.width / 2)
                     .offset(y: calculatedHeaderHeight)
                 )
+                .shadow(color: Color.black.opacity(0.3), radius: 8, x: 0, y: 2)
 
                 // Spinner
                 ChargingSpinner()
@@ -97,7 +98,8 @@ extension ParallaxHeader {
         } label: {
             Asset.Icons.chevron.imageView
                 .resizable()
-                .frame(width: 16, height: 16)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 29, height: 29)
                 .foregroundColor(.jucrSolidGray)
         }
         .frame(height: calculatedHeaderHeight, alignment: .top)
@@ -110,7 +112,7 @@ extension ParallaxHeader {
 
 extension ParallaxHeader {
     private func handleScrollEnd(_ offset: CGFloat, _ velocity: CGFloat, _ scrollProxy: ScrollViewProxy) {
-        let headerHeight = (size.height * 0.35) + safeArea.top
+        let headerHeight = (size.height * 0.37) + safeArea.top
         let minimumHeaderHeight = 65 + safeArea.top
         let targetEnd = offset + (velocity * velocityMultiplier)
 

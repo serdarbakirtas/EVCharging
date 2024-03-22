@@ -26,15 +26,6 @@ extension ParallaxContentView {
         let imageOffsetY = calculateImageOffsetY(geometry)
 
         return ZStack {
-            Asset.Images.tesla.imageView
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .clipped()
-                .frame(width: geometry.size.width, height: geometry.size.height)
-                .parallaxOffsetX(progress, geometry)
-                .parallaxOffsetY(imageOffsetY, progress)
-                .parallaxScaleEffect(progress)
-
             if isTeslaModelXDisplayed {
                 VStack(spacing: 4) {
                     teslaModelText
@@ -52,11 +43,20 @@ extension ParallaxContentView {
                 .padding(EdgeInsets(top: statusBarHeight + 16, leading: 16, bottom: 0, trailing: 16))
             }
 
+            Asset.Images.tesla.imageView
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .clipped()
+                .frame(width: geometry.size.width, height: geometry.size.height)
+                .parallaxOffsetX(progress, geometry)
+                .parallaxOffsetY(imageOffsetY, progress)
+                .parallaxScaleEffect(progress)
+            
             Text("TIME TO END OF CHARGE: 49 MIN")
                 .font(.montserratLight(size: 12))
                 .foregroundColor(.jucrSolidGray)
                 .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height, alignment: .bottom)
-                .padding(EdgeInsets(top: 16, leading: 16, bottom: 40, trailing: 16))
+                .padding(EdgeInsets(top: 16, leading: 16, bottom: 48, trailing: 16))
                 .parallaxOpacityEffect(progress)
         }
         .onAppear {
