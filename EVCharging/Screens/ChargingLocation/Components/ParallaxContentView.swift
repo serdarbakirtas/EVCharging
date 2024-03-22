@@ -25,13 +25,12 @@ extension ParallaxContentView {
     private func parallaxImage(_ geometry: GeometryProxy) -> some View {
         let imageOffsetY = calculateImageOffsetY(geometry)
 
-        return ZStack {
+        return VStack(spacing: 0) {
             if isTeslaModelXDisplayed {
                 VStack(spacing: 4) {
                     teslaModelText
                     chargingText
                 }
-                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height, alignment: .top)
                 .padding(EdgeInsets(top: statusBarHeight + 16, leading: 16, bottom: 0, trailing: 16))
 
             } else {
@@ -39,7 +38,6 @@ extension ParallaxContentView {
                     helloText
                     chargingSituationText
                 }
-                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height, alignment: .top)
                 .padding(EdgeInsets(top: statusBarHeight + 16, leading: 16, bottom: 0, trailing: 16))
             }
 
@@ -47,17 +45,16 @@ extension ParallaxContentView {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .clipped()
-                .frame(width: geometry.size.width, height: geometry.size.height)
-                .parallaxOffsetX(progress, geometry)
-                .parallaxOffsetY(imageOffsetY, progress)
+                .frame(minHeight: 80)
+                .offset(x: min(progress, 1) * ((geometry.size.width * 0.5) - (minimumHeaderHeight - 16)))
+                .offset(y: (-(geometry.size.height / 2) - (statusBarHeight < 40 ? statusBarHeight : .zero)) * progress)
                 .parallaxScaleEffect(progress)
-            
+
             Text("TIME TO END OF CHARGE: 49 MIN")
                 .font(.montserratLight(size: 12))
                 .foregroundColor(.jucrSolidGray)
-                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height, alignment: .bottom)
-                .padding(EdgeInsets(top: 16, leading: 16, bottom: 48, trailing: 16))
                 .parallaxOpacityEffect(progress)
+                .offset(y: (-(geometry.size.height / 2)) * progress)
         }
         .onAppear {
             isTeslaModelXDisplayed = imageOffsetY > 0
