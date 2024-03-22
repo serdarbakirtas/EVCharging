@@ -10,6 +10,14 @@ enum Asset {
         static let station = ImageAsset(name: "Icons/charging-station-solid")
         static let location = ImageAsset(name: "Icons/location-dot-solid")
         static let chevron = ImageAsset(name: "Icons/chevron-down-solid")
+        static let ellipsis = ImageAsset(name: "Icons/ellipsis-solid")
+    }
+    
+    enum Tabbar {
+        static let home = ImageAsset(name: "Tabs/car-solid")
+        static let search = ImageAsset(name: "Tabs/magnifying-glass-solid")
+        static let map = ImageAsset(name: "Tabs/map-solid")
+        static let profile = ImageAsset(name: "Tabs/user-solid")
     }
     
     enum Images {

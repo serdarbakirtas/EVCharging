@@ -44,7 +44,6 @@ extension ChargingSpinner {
             Text("\(Int(progress * 100))%")
                 .font(.montserrat(size: 12))
                 .foregroundColor(.jucrSolidGray)
-                .bold()
         }
     }
 }

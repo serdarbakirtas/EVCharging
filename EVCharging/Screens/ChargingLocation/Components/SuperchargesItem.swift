@@ -26,7 +26,7 @@ extension SuperchargesItem {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundColor(.jucrSecondary)
 
-            Text("4/10 available")
+            Text("4 / 10 available")
                 .font(.montserratLight(size: 12))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundColor(.jucrSecondary)

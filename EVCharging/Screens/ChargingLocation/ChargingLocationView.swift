@@ -21,11 +21,22 @@ struct ChargingLocationView: View {
 extension ChargingLocationView {
     private var statistics: some View {
         VStack(spacing: 8) {
-            Text("Statistic")
-                .font(.montserratBold(size: 20))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundColor(.primary)
-                .padding(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
+            HStack(spacing: 0) {
+                Text("Statistic")
+                    .font(.montserratBold(size: 16))
+                    .frame(alignment: .leading)
+                    .foregroundColor(.jucrSecondary)
+                
+                Spacer()
+                
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Asset.Icons.ellipsis.imageView
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.jucrSecondary)
+                })
+            }
+            .padding(EdgeInsets(top: 24, leading: 16, bottom: 0, trailing: 16))
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
@@ -48,11 +59,23 @@ extension ChargingLocationView {
 
     private var sampleStations: some View {
         VStack(spacing: 8) {
-            Text("Nearby Supercharges")
-                .font(.montserratBold(size: 20))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundColor(.primary)
-                .padding()
+            HStack(spacing: 0) {
+                Text("Nearby Supercharges")
+                    .font(.montserratBold(size: 16))
+                    .frame(alignment: .leading)
+                    .foregroundColor(.jucrSecondary)
+                    .padding()
+                
+                Spacer()
+                
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Text("View All")
+                        .font(.montserratLight(size: 12))
+                        .frame(alignment: .leading)
+                        .foregroundColor(.jucrSecondary)
+                        .padding()
+                })
+            }
 
             ForEach(1 ... 10, id: \.self) { _ in
                 SuperchargesItem()

@@ -18,12 +18,12 @@ struct StatisticsItem: View {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color.white)
                 .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
-                .frame(width: 140, height: 150)
+                .frame(width: 140, height: 140)
                 .overlay(
                     HStack {
-                        VStack(spacing: 16) {
+                        VStack(spacing: 20) {
                             icon
-                            VStack(spacing: 8) {
+                            VStack(spacing: 4) {
                                 titleView
                                 subtitleView
                             }
@@ -47,7 +47,7 @@ extension StatisticsItem {
                 .overlay(
                     imageView
                         .resizable()
-                        .frame(width: 30, height: 30) // Icon size
+                        .frame(width: 24, height: 24) // Icon size
                         .foregroundColor(color)
                 )
             Spacer()
@@ -56,17 +56,15 @@ extension StatisticsItem {
 
     private var titleView: some View {
         Text(title)
-            .font(.montserratBold(size: 16))
+            .font(.montserratBold(size: 14))
             .foregroundColor(.jucrSecondary)
-            .bold()
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private var subtitleView: some View {
         Text(subtitle)
-            .font(.montserratLight(size: 12))
-            .foregroundColor(.secondary)
-            .bold()
+            .font(.montserratLight(size: 10))
+            .foregroundColor(.jucrSecondary)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

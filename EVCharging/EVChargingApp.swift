@@ -2,9 +2,14 @@ import SwiftUI
 
 @main
 struct EVChargingApp: App {
+    let appState = AppState()
+
     var body: some Scene {
         WindowGroup {
-            ChargingLocationView()
+            TabbarView()
+                .environment(appState)
+                .preferredColorScheme(.dark)
+                .background(.white)
         }
     }
 }

@@ -13,9 +13,6 @@
 		30D9BC332BAAF107003CEA44 /* EVChargingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC322BAAF107003CEA44 /* EVChargingTests.swift */; };
 		30D9BC3D2BAAF107003CEA44 /* EVChargingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC3C2BAAF107003CEA44 /* EVChargingUITests.swift */; };
 		30D9BC3F2BAAF107003CEA44 /* EVChargingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC3E2BAAF107003CEA44 /* EVChargingUITestsLaunchTests.swift */; };
-		30D9BC512BAAF360003CEA44 /* ChargingLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC4E2BAAF360003CEA44 /* ChargingLocationView.swift */; };
-		30D9BC522BAAF360003CEA44 /* ChargingLocationViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC4F2BAAF360003CEA44 /* ChargingLocationViewState.swift */; };
-		30D9BC532BAAF360003CEA44 /* ChargingLocationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC502BAAF360003CEA44 /* ChargingLocationFeature.swift */; };
 		30D9BC552BAAF39F003CEA44 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC542BAAF39F003CEA44 /* Color.swift */; };
 		30D9BC582BAB07FB003CEA44 /* ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC572BAB07FB003CEA44 /* ParallaxHeader.swift */; };
 		30D9BC6D2BAB1119003CEA44 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D9BC5B2BAB1118003CEA44 /* Montserrat-ExtraLight.ttf */; };
@@ -45,6 +42,11 @@
 		30D9BC912BAB9D88003CEA44 /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC902BAB9D88003CEA44 /* ImageAsset.swift */; };
 		30D9BC932BAC2C2E003CEA44 /* StatisticsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC922BAC2C2E003CEA44 /* StatisticsItem.swift */; };
 		30D9BC952BAC2C55003CEA44 /* SuperchargesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC942BAC2C55003CEA44 /* SuperchargesItem.swift */; };
+		30D9BC972BAD27A9003CEA44 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC962BAD27A9003CEA44 /* TabbarView.swift */; };
+		30D9BC992BAD287B003CEA44 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC982BAD287B003CEA44 /* AppState.swift */; };
+		30D9BCA32BAD4E9F003CEA44 /* ChargingLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BCA02BAD4E9E003CEA44 /* ChargingLocationView.swift */; };
+		30D9BCA42BAD4E9F003CEA44 /* ChargingLocationViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BCA12BAD4E9E003CEA44 /* ChargingLocationViewState.swift */; };
+		30D9BCA52BAD4E9F003CEA44 /* ChargingLocationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BCA22BAD4E9F003CEA44 /* ChargingLocationFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,9 +76,6 @@
 		30D9BC382BAAF107003CEA44 /* EVChargingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVChargingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D9BC3C2BAAF107003CEA44 /* EVChargingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVChargingUITests.swift; sourceTree = "<group>"; };
 		30D9BC3E2BAAF107003CEA44 /* EVChargingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVChargingUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		30D9BC4E2BAAF360003CEA44 /* ChargingLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingLocationView.swift; sourceTree = SOURCE_ROOT; };
-		30D9BC4F2BAAF360003CEA44 /* ChargingLocationViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingLocationViewState.swift; sourceTree = SOURCE_ROOT; };
-		30D9BC502BAAF360003CEA44 /* ChargingLocationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingLocationFeature.swift; sourceTree = SOURCE_ROOT; };
 		30D9BC542BAAF39F003CEA44 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		30D9BC572BAB07FB003CEA44 /* ParallaxHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxHeader.swift; sourceTree = "<group>"; };
 		30D9BC5B2BAB1118003CEA44 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -107,6 +106,11 @@
 		30D9BC902BAB9D88003CEA44 /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
 		30D9BC922BAC2C2E003CEA44 /* StatisticsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsItem.swift; sourceTree = "<group>"; };
 		30D9BC942BAC2C55003CEA44 /* SuperchargesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperchargesItem.swift; sourceTree = "<group>"; };
+		30D9BC962BAD27A9003CEA44 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		30D9BC982BAD287B003CEA44 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		30D9BCA02BAD4E9E003CEA44 /* ChargingLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargingLocationView.swift; sourceTree = "<group>"; };
+		30D9BCA12BAD4E9E003CEA44 /* ChargingLocationViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargingLocationViewState.swift; sourceTree = "<group>"; };
+		30D9BCA22BAD4E9F003CEA44 /* ChargingLocationFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargingLocationFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,8 @@
 				30D9BC592BAB10C2003CEA44 /* Resources */,
 				30D9BC4C2BAAF208003CEA44 /* Screens */,
 				30D9BC212BAAF105003CEA44 /* EVChargingApp.swift */,
+				30D9BC982BAD287B003CEA44 /* AppState.swift */,
+				30D9BC962BAD27A9003CEA44 /* TabbarView.swift */,
 				30D9BC272BAAF107003CEA44 /* Preview Content */,
 			);
 			path = EVCharging;
@@ -217,9 +223,9 @@
 			isa = PBXGroup;
 			children = (
 				30D9BC562BAB07F0003CEA44 /* Components */,
-				30D9BC4E2BAAF360003CEA44 /* ChargingLocationView.swift */,
-				30D9BC4F2BAAF360003CEA44 /* ChargingLocationViewState.swift */,
-				30D9BC502BAAF360003CEA44 /* ChargingLocationFeature.swift */,
+				30D9BCA22BAD4E9F003CEA44 /* ChargingLocationFeature.swift */,
+				30D9BCA02BAD4E9E003CEA44 /* ChargingLocationView.swift */,
+				30D9BCA12BAD4E9E003CEA44 /* ChargingLocationViewState.swift */,
 			);
 			path = ChargingLocation;
 			sourceTree = "<group>";
@@ -450,18 +456,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D9BCA52BAD4E9F003CEA44 /* ChargingLocationFeature.swift in Sources */,
 				30D9BC8B2BAB3651003CEA44 /* CustomShape.swift in Sources */,
 				30D9BC932BAC2C2E003CEA44 /* StatisticsItem.swift in Sources */,
+				30D9BCA42BAD4E9F003CEA44 /* ChargingLocationViewState.swift in Sources */,
+				30D9BC972BAD27A9003CEA44 /* TabbarView.swift in Sources */,
+				30D9BCA32BAD4E9F003CEA44 /* ChargingLocationView.swift in Sources */,
 				30D9BC8D2BAB684E003CEA44 /* ParallaxView.swift in Sources */,
 				30D9BC8F2BAB925C003CEA44 /* ChargingSpinner.swift in Sources */,
 				30D9BC842BAB163B003CEA44 /* ScrollDetector.swift in Sources */,
+				30D9BC992BAD287B003CEA44 /* AppState.swift in Sources */,
 				30D9BC952BAC2C55003CEA44 /* SuperchargesItem.swift in Sources */,
 				30D9BC912BAB9D88003CEA44 /* ImageAsset.swift in Sources */,
-				30D9BC512BAAF360003CEA44 /* ChargingLocationView.swift in Sources */,
-				30D9BC522BAAF360003CEA44 /* ChargingLocationViewState.swift in Sources */,
 				30D9BC812BAB1232003CEA44 /* Font.swift in Sources */,
 				30D9BC862BAB32CB003CEA44 /* ParallaxContentView.swift in Sources */,
-				30D9BC532BAAF360003CEA44 /* ChargingLocationFeature.swift in Sources */,
 				30D9BC552BAAF39F003CEA44 /* Color.swift in Sources */,
 				30D9BC582BAB07FB003CEA44 /* ParallaxHeader.swift in Sources */,
 				30D9BC222BAAF105003CEA44 /* EVChargingApp.swift in Sources */,
@@ -634,8 +642,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -663,8 +671,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

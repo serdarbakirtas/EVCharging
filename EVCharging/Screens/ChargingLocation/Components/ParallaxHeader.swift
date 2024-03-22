@@ -77,7 +77,7 @@ extension ParallaxHeader {
                 // Spinner
                 ChargingSpinner()
                     .frame(height: calculatedHeaderHeight, alignment: .top)
-                    .offset(y: calculatedHeaderHeight - 20)
+                    .offset(y: calculatedHeaderHeight - 30)
                     .parallaxOpacityEffect(progress)
                 
                 buttonChevron

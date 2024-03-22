@@ -7,6 +7,11 @@ struct ParallaxContentView: View {
     @State private var isTeslaModelXDisplayed = false
     @Namespace private var animation
 
+    private var statusBarHeight: CGFloat {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return 0 }
+        return windowScene.statusBarManager?.statusBarFrame.height ?? 0
+    }
+
     var body: some View {
         GeometryReader { geometry in
             parallaxImage(geometry)
@@ -35,23 +40,23 @@ extension ParallaxContentView {
                     teslaModelText
                     chargingText
                 }
-                .frame(maxWidth: geometry.size.width, maxHeight: .infinity, alignment: .top)
-                .padding(EdgeInsets(top: 56, leading: 16, bottom: 0, trailing: 16))
+                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height, alignment: .top)
+                .padding(EdgeInsets(top: statusBarHeight + 16, leading: 16, bottom: 0, trailing: 16))
 
             } else {
                 VStack(spacing: 4) {
                     helloText
                     chargingSituationText
                 }
-                .frame(maxWidth: geometry.size.width, maxHeight: .infinity, alignment: .top)
-                .padding(EdgeInsets(top: 56, leading: 16, bottom: 0, trailing: 16))
+                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height, alignment: .top)
+                .padding(EdgeInsets(top: statusBarHeight + 16, leading: 16, bottom: 0, trailing: 16))
             }
 
             Text("TIME TO END OF CHARGE: 49 MIN")
                 .font(.montserratLight(size: 12))
                 .foregroundColor(.jucrSolidGray)
-                .frame(maxWidth: geometry.size.width, maxHeight: .infinity, alignment: .bottom)
-                .padding(EdgeInsets(top: 16, leading: 16, bottom: 32, trailing: 16))
+                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height, alignment: .bottom)
+                .padding(EdgeInsets(top: 16, leading: 16, bottom: 40, trailing: 16))
                 .parallaxOpacityEffect(progress)
         }
         .onAppear {

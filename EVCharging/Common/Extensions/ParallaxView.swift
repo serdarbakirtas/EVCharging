@@ -10,15 +10,15 @@ extension View {
     }
     
     func parallaxScaleEffect(_ progress: CGFloat) -> some View {
-        scaleEffect(1 - (progress * 0.5), anchor: .trailing)
+        scaleEffect(1 - (progress * 0.55), anchor: .trailing)
     }
 
     func slideOffsetX(_ progress: CGFloat, _ geometry: GeometryProxy) -> some View {
-        offset(x: -(geometry.frame(in: .global).minX - 8) * progress)
+        offset(x: -(geometry.frame(in: .global).minX) * progress)
     }
     
     func parallaxOffsetX(_ progress: CGFloat, _ geometry: GeometryProxy) -> some View {
-        offset(x: -(geometry.frame(in: .global).minX - 8) * progress)
+        offset(x: -(geometry.frame(in: .global).minX) * progress)
     }
 
     func parallaxOffsetY(_ offsetY: CGFloat, _: CGFloat) -> some View {
