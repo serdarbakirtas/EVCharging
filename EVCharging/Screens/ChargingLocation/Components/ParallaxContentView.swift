@@ -3,14 +3,9 @@ import SwiftUI
 struct ParallaxContentView: View {
     var progress: CGFloat
     var minimumHeaderHeight: CGFloat
-
+    var navigationBarHeight: CGFloat
     @State private var isTeslaModelXDisplayed = false
     @Namespace private var animation
-
-    private var statusBarHeight: CGFloat {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return 0 }
-        return windowScene.statusBarManager?.statusBarFrame.height ?? 0
-    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -31,14 +26,12 @@ extension ParallaxContentView {
                     teslaModelText
                     chargingText
                 }
-                .padding(EdgeInsets(top: statusBarHeight + 16, leading: 16, bottom: 0, trailing: 16))
 
             } else {
                 VStack(spacing: 4) {
                     helloText
                     chargingSituationText
                 }
-                .padding(EdgeInsets(top: statusBarHeight + 16, leading: 16, bottom: 0, trailing: 16))
             }
 
             Asset.Images.tesla.imageView
@@ -47,15 +40,17 @@ extension ParallaxContentView {
                 .clipped()
                 .frame(minHeight: 80)
                 .offset(x: min(progress, 1) * ((geometry.size.width * 0.5) - (minimumHeaderHeight - 16)))
-                .offset(y: (-(geometry.size.height / 2) - (statusBarHeight < 40 ? statusBarHeight : .zero)) * progress)
+                .offset(y: (-(geometry.size.height * 0.5)) * progress)
                 .parallaxScaleEffect(progress)
 
             Text("TIME TO END OF CHARGE: 49 MIN")
                 .font(.montserratLight(size: 12))
                 .foregroundColor(.jucrSolidGray)
                 .parallaxOpacityEffect(progress)
-                .offset(y: (-(geometry.size.height / 2)) * progress)
+                .offset(y: (-(geometry.size.height * 0.5)) * progress)
         }
+        .padding(EdgeInsets(top: navigationBarHeight, leading: 16, bottom: 16, trailing: 16))
+
         .onAppear {
             isTeslaModelXDisplayed = imageOffsetY > 0
         }

@@ -5,7 +5,8 @@ struct ChargingLocationView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            ParallaxHeader(size: geometry.size, safeArea: geometry.safeAreaInsets) {
+            let navigationBarHeight = geometry.safeAreaInsets.top
+            ParallaxHeader(size: geometry.size, safeArea: geometry.safeAreaInsets, navigationBarHeight: navigationBarHeight) {
                 VStack(spacing: 0) {
                     statistics
                     sampleStations
@@ -26,10 +27,10 @@ extension ChargingLocationView {
                     .font(.montserratBold(size: 16))
                     .frame(alignment: .leading)
                     .foregroundColor(.jucrSecondary)
-                
+
                 Spacer()
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+
+                Button(action: /*@START_MENU_TOKEN@*/ {}/*@END_MENU_TOKEN@*/, label: {
                     Asset.Icons.ellipsis.imageView
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -66,10 +67,10 @@ extension ChargingLocationView {
                     .frame(alignment: .leading)
                     .foregroundColor(.jucrSecondary)
                     .padding()
-                
+
                 Spacer()
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+
+                Button(action: /*@START_MENU_TOKEN@*/ {}/*@END_MENU_TOKEN@*/, label: {
                     Text("View All")
                         .font(.montserratLight(size: 12))
                         .frame(alignment: .trailing)

@@ -5,6 +5,7 @@ struct ParallaxHeader<Content>: View where Content: View {
     private let content: () -> Content
     private let size: CGSize
     private let safeArea: EdgeInsets
+    private let navigationBarHeight: CGFloat
 
     @State private var offsetY: CGFloat = 0
 
@@ -31,11 +32,13 @@ struct ParallaxHeader<Content>: View where Content: View {
     }
 
     // MARK: - Initializers
+
     /// - Parameters
     ///   - size: Size of geometry
     ///   - safeArea: Safe area of geometry
     ///   - ViewBuilder: It return view to impelement it under the header view
-    init(size: CGSize, safeArea: EdgeInsets, @ViewBuilder content: @escaping () -> Content) {
+    init(size: CGSize, safeArea: EdgeInsets, navigationBarHeight: CGFloat, @ViewBuilder content: @escaping () -> Content) {
+        self.navigationBarHeight = navigationBarHeight
         self.size = size
         self.safeArea = safeArea
         self.content = content
@@ -80,18 +83,22 @@ extension ParallaxHeader {
                     .frame(height: calculatedHeaderHeight, alignment: .top)
                     .offset(y: calculatedHeaderHeight - 30)
                     .parallaxOpacityEffect(progress)
-                
+
                 buttonChevron
 
                 // Display images and texts
-                ParallaxContentView(progress: progress, minimumHeaderHeight: minimumHeaderHeight)
+                ParallaxContentView(
+                    progress: progress,
+                    minimumHeaderHeight: minimumHeaderHeight,
+                    navigationBarHeight: navigationBarHeight
+                )
             }
             .frame(height: calculatedHeaderHeight, alignment: .bottom)
             .offset(y: -offsetY)
         }
         .frame(height: headerHeight)
     }
-    
+
     private var buttonChevron: some View {
         Button {
             print("Button was tapped")
