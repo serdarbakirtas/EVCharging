@@ -86,7 +86,7 @@ extension ParallaxContentView {
     }
 
     private var chargingSituationText: some View {
-        Text("Charging your car...")
+        Text("Charging you car...")
             .font(.montserratBold(size: 18))
             .foregroundColor(.jucrSolidGray)
             .matchedGeometryEffect(id: "subtitleText", in: animation)
