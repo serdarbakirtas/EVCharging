@@ -21,7 +21,7 @@ struct ChargingLocationView: View {
 
 extension ChargingLocationView {
     private var statistics: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 0) {
             HStack(spacing: 0) {
                 Text("Statistic")
                     .font(.montserratBold(size: 16))
@@ -54,30 +54,30 @@ extension ChargingLocationView {
                         imageView: Asset.Icons.station.imageView,
                         color: .jucrAdditinonal, title: "20 M", subtitle: "Fast charging"
                     )
-                }.padding()
+                }
+                .padding()
             }
         }
     }
 
     private var sampleStations: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 0) {
             HStack(spacing: 0) {
                 Text("Nearby Supercharges")
                     .font(.montserratBold(size: 16))
                     .frame(alignment: .leading)
                     .foregroundColor(.jucrSecondary)
-                    .padding()
 
                 Spacer()
 
                 Button(action: /*@START_MENU_TOKEN@*/ {}/*@END_MENU_TOKEN@*/, label: {
                     Text("View All")
                         .font(.montserratLight(size: 12))
-                        .frame(alignment: .trailing)
+                        .frame(height: 29, alignment: .trailing)
                         .foregroundColor(.jucrSecondary)
-                        .padding()
                 })
             }
+            .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
 
             ForEach(1 ... 10, id: \.self) { _ in
                 SuperchargesItem()

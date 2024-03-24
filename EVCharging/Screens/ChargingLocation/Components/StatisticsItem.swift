@@ -20,8 +20,8 @@ struct StatisticsItem: View {
                 .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
                 .frame(width: 140, height: 140)
                 .overlay(
-                    HStack {
-                        VStack(spacing: 20) {
+                    HStack(spacing: 0) {
+                        VStack(spacing: 16) {
                             icon
                             VStack(spacing: 4) {
                                 titleView

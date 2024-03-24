@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30AEE0182BB050F800E674D9 /* screenshot1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30AEE0152BB050F800E674D9 /* screenshot1.jpg */; };
-		30AEE0192BB050F800E674D9 /* screenshot2.png in Resources */ = {isa = PBXBuildFile; fileRef = 30AEE0162BB050F800E674D9 /* screenshot2.png */; };
-		30AEE01A2BB050F800E674D9 /* screenshot3.png in Resources */ = {isa = PBXBuildFile; fileRef = 30AEE0172BB050F800E674D9 /* screenshot3.png */; };
+		30AEE01E2BB07E9400E674D9 /* screenshot1.png in Resources */ = {isa = PBXBuildFile; fileRef = 30AEE01B2BB07E9400E674D9 /* screenshot1.png */; };
+		30AEE01F2BB07E9400E674D9 /* screenshot3.png in Resources */ = {isa = PBXBuildFile; fileRef = 30AEE01C2BB07E9400E674D9 /* screenshot3.png */; };
+		30AEE0202BB07E9400E674D9 /* screenshot2.png in Resources */ = {isa = PBXBuildFile; fileRef = 30AEE01D2BB07E9400E674D9 /* screenshot2.png */; };
+		30AEE0222BB07EF600E674D9 /* screenshot4.png in Resources */ = {isa = PBXBuildFile; fileRef = 30AEE0212BB07EF600E674D9 /* screenshot4.png */; };
+		30AEE0242BB0853000E674D9 /* screenshot5.png in Resources */ = {isa = PBXBuildFile; fileRef = 30AEE0232BB0853000E674D9 /* screenshot5.png */; };
 		30D9BC222BAAF105003CEA44 /* EVChargingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9BC212BAAF105003CEA44 /* EVChargingApp.swift */; };
 		30D9BC262BAAF107003CEA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D9BC252BAAF107003CEA44 /* Assets.xcassets */; };
 		30D9BC292BAAF107003CEA44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D9BC282BAAF107003CEA44 /* Preview Assets.xcassets */; };
@@ -70,9 +72,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		30AEE0152BB050F800E674D9 /* screenshot1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = screenshot1.jpg; sourceTree = "<group>"; };
-		30AEE0162BB050F800E674D9 /* screenshot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot2.png; sourceTree = "<group>"; };
-		30AEE0172BB050F800E674D9 /* screenshot3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot3.png; sourceTree = "<group>"; };
+		30AEE01B2BB07E9400E674D9 /* screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot1.png; sourceTree = "<group>"; };
+		30AEE01C2BB07E9400E674D9 /* screenshot3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot3.png; sourceTree = "<group>"; };
+		30AEE01D2BB07E9400E674D9 /* screenshot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot2.png; sourceTree = "<group>"; };
+		30AEE0212BB07EF600E674D9 /* screenshot4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot4.png; sourceTree = "<group>"; };
+		30AEE0232BB0853000E674D9 /* screenshot5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot5.png; sourceTree = "<group>"; };
 		30D9BC1E2BAAF105003CEA44 /* EVCharging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVCharging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D9BC212BAAF105003CEA44 /* EVChargingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVChargingApp.swift; sourceTree = "<group>"; };
 		30D9BC252BAAF107003CEA44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,9 +151,11 @@
 		30AEE0142BB050DF00E674D9 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				30AEE0152BB050F800E674D9 /* screenshot1.jpg */,
-				30AEE0162BB050F800E674D9 /* screenshot2.png */,
-				30AEE0172BB050F800E674D9 /* screenshot3.png */,
+				30AEE01B2BB07E9400E674D9 /* screenshot1.png */,
+				30AEE01D2BB07E9400E674D9 /* screenshot2.png */,
+				30AEE01C2BB07E9400E674D9 /* screenshot3.png */,
+				30AEE0212BB07EF600E674D9 /* screenshot4.png */,
+				30AEE0232BB0853000E674D9 /* screenshot5.png */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -432,25 +438,27 @@
 				30D9BC772BAB1119003CEA44 /* Montserrat-BoldItalic.ttf in Resources */,
 				30D9BC752BAB1119003CEA44 /* Montserrat-LightItalic.ttf in Resources */,
 				30D9BC742BAB1119003CEA44 /* Montserrat-Thin.ttf in Resources */,
-				30AEE01A2BB050F800E674D9 /* screenshot3.png in Resources */,
 				30D9BC702BAB1119003CEA44 /* Montserrat-Light.ttf in Resources */,
 				30D9BC292BAAF107003CEA44 /* Preview Assets.xcassets in Resources */,
 				30D9BC7B2BAB1119003CEA44 /* Montserrat-Italic.ttf in Resources */,
-				30AEE0182BB050F800E674D9 /* screenshot1.jpg in Resources */,
+				30AEE01E2BB07E9400E674D9 /* screenshot1.png in Resources */,
 				30D9BC6D2BAB1119003CEA44 /* Montserrat-ExtraLight.ttf in Resources */,
-				30AEE0192BB050F800E674D9 /* screenshot2.png in Resources */,
 				30D9BC7C2BAB1119003CEA44 /* Montserrat-ExtraBold.ttf in Resources */,
 				30D9BC7E2BAB1119003CEA44 /* Montserrat-Regular.ttf in Resources */,
 				30D9BC6F2BAB1119003CEA44 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				30D9BC732BAB1119003CEA44 /* Montserrat-MediumItalic.ttf in Resources */,
+				30AEE0222BB07EF600E674D9 /* screenshot4.png in Resources */,
 				30D9BC6E2BAB1119003CEA44 /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				30D9BC262BAAF107003CEA44 /* Assets.xcassets in Resources */,
+				30AEE0242BB0853000E674D9 /* screenshot5.png in Resources */,
 				30D9BC7A2BAB1119003CEA44 /* Montserrat-ThinItalic.ttf in Resources */,
 				30D9BC782BAB1119003CEA44 /* Montserrat-SemiBold.ttf in Resources */,
 				30D9BC792BAB1119003CEA44 /* Montserrat-Black.ttf in Resources */,
 				30D9BC7D2BAB1119003CEA44 /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				30D9BC762BAB1119003CEA44 /* Montserrat-BlackItalic.ttf in Resources */,
+				30AEE01F2BB07E9400E674D9 /* screenshot3.png in Resources */,
 				30D9BC722BAB1119003CEA44 /* Montserrat-Medium.ttf in Resources */,
+				30AEE0202BB07E9400E674D9 /* screenshot2.png in Resources */,
 				30D9BC712BAB1119003CEA44 /* Montserrat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

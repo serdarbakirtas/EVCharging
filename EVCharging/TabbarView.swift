@@ -36,7 +36,7 @@ struct TabbarView: View {
                 .frame(height: 83) // The height of a tab bar is default 68 points.
                 .shadow(color: Color.black.opacity(0.2), radius: 16, x: 0, y: 2)
                 .overlay(
-                    HStack {
+                    HStack(spacing: 0) {
                         TabBarButton(tab: .home, image: Asset.Tabbar.home.imageView, selectedTab: $selectedTab)
                         Spacer()
                         TabBarButton(tab: .search, image: Asset.Tabbar.search.imageView, selectedTab: $selectedTab)
